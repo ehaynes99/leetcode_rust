@@ -1,3 +1,6 @@
 mod solutions;
+mod util;
 
-fn main() {}
+fn main() {
+
+}
