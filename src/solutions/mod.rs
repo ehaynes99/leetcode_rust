@@ -6,3 +6,4 @@ pub mod s0023_merge_k_sorted_lists;
 pub mod s0121_best_time_to_buy_and_sell_stock;
 pub mod s0125_valid_palindrome;
 pub mod s0226_invert_binary_tree;
+pub mod s0242_valid_anagram;
