@@ -9,3 +9,4 @@ pub mod s0226_invert_binary_tree;
 pub mod s0242_valid_anagram;
 pub mod s0704_binary_search;
 pub mod s0733_flood_fill;
+pub mod s0053_maximum_subarray;
