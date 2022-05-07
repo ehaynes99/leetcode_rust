@@ -1,17 +1,17 @@
-struct MyQueue {
+pub struct MyQueue {
     a: Vec<i32>,
     b: Vec<i32>,
 }
 
 impl MyQueue {
-    fn new() -> Self {
+    pub fn new() -> Self {
         Self {
             a: vec![],
             b: vec![],
         }
     }
 
-    fn push(&mut self, x: i32) {
+    pub fn push(&mut self, x: i32) {
         while !self.b.is_empty() {
             self.a.push(self.b.pop().unwrap());
         }
@@ -21,15 +21,15 @@ impl MyQueue {
         }
     }
 
-    fn pop(&mut self) -> i32 {
+    pub fn pop(&mut self) -> i32 {
         self.b.pop().unwrap()
     }
 
-    fn peek(&self) -> i32 {
+    pub fn peek(&self) -> i32 {
         *self.b.last().unwrap()
     }
 
-    fn empty(&self) -> bool {
+    pub fn empty(&self) -> bool {
         self.b.is_empty()
     }
 }
