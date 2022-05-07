@@ -8,6 +8,7 @@ pub mod s0110_balanced_binary_tree;
 pub mod s0121_best_time_to_buy_and_sell_stock;
 pub mod s0125_valid_palindrome;
 pub mod s0226_invert_binary_tree;
+pub mod s0232_implement_queue_using_stacks;
 pub mod s0235_lowest_common_ancestor_of_a_binary_search_tree;
 pub mod s0242_valid_anagram;
 pub mod s0542_matrix;
