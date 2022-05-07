@@ -1,13 +1,14 @@
-pub mod s0235_lowest_common_ancestor_of_a_binary_search_tree;
 pub mod s0001_two_sum;
 pub mod s0009_palindrome_number;
 pub mod s0020_valid_parentheses;
 pub mod s0021_merge_two_sorted_lists;
 pub mod s0023_merge_k_sorted_lists;
 pub mod s0053_maximum_subarray;
+pub mod s0110_balanced_binary_tree;
 pub mod s0121_best_time_to_buy_and_sell_stock;
 pub mod s0125_valid_palindrome;
 pub mod s0226_invert_binary_tree;
+pub mod s0235_lowest_common_ancestor_of_a_binary_search_tree;
 pub mod s0242_valid_anagram;
 pub mod s0542_matrix;
 pub mod s0704_binary_search;
