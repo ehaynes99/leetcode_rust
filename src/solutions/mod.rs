@@ -9,6 +9,7 @@ pub mod s0110_balanced_binary_tree;
 pub mod s0121_best_time_to_buy_and_sell_stock;
 pub mod s0125_valid_palindrome;
 pub mod s0155_min_stack;
+pub mod s0206_reverse_linked_list;
 pub mod s0225_implement_stack_using_queues;
 pub mod s0226_invert_binary_tree;
 pub mod s0232_implement_queue_using_stacks;
