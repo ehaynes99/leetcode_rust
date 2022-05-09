@@ -8,11 +8,7 @@ type MaybeNode = Option<Rc<RefCell<TreeNode>>>;
 pub struct Solution;
 
 impl Solution {
-    pub fn lowest_common_ancestor(
-        root: MaybeNode,
-        p: MaybeNode,
-        q: MaybeNode,
-    ) -> MaybeNode {
+    pub fn lowest_common_ancestor(root: MaybeNode, p: MaybeNode, q: MaybeNode) -> MaybeNode {
         if p == root || q == root {
             return root;
         }
@@ -40,13 +36,7 @@ impl Solution {
                     Some(root_ref.clone())
                 }
             }
-            _ => panic!("Could not solve!")
+            _ => panic!("Could not solve!"),
         }
     }
-}
-
-#[cfg(test)]
-mod tests {
-    use super::*;
-
 }
