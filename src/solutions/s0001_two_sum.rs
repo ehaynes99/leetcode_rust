@@ -3,7 +3,7 @@ pub struct Solution;
 impl Solution {
     pub fn two_sum(nums: Vec<i32>, target: i32) -> Vec<i32> {
         for a in 0..nums.len() {
-            if a as i32 >= target {
+            if a as i32 >= target && target > 0 {
                 continue;
             }
             for b in (a + 1)..nums.len() {
@@ -45,6 +45,6 @@ mod tests {
     fn test4() {
         let nums = vec![0, 4, 3, 0];
         let target = 0;
-        assert_eq!(Solution::two_sum(nums, target), vec![0, 1]);
+        assert_eq!(Solution::two_sum(nums, target), vec![0, 3]);
     }
 }
