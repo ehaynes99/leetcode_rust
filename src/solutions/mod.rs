@@ -1,15 +1,16 @@
-pub mod s0169_majority_element;
 pub mod s0001_two_sum;
 pub mod s0009_palindrome_number;
 pub mod s0020_valid_parentheses;
 pub mod s0021_merge_two_sorted_lists;
 pub mod s0023_merge_k_sorted_lists;
 pub mod s0053_maximum_subarray;
+pub mod s0067_add_binary;
 pub mod s0070_climbing_stairs;
 pub mod s0110_balanced_binary_tree;
 pub mod s0121_best_time_to_buy_and_sell_stock;
 pub mod s0125_valid_palindrome;
 pub mod s0155_min_stack;
+pub mod s0169_majority_element;
 pub mod s0206_reverse_linked_list;
 pub mod s0225_implement_stack_using_queues;
 pub mod s0226_invert_binary_tree;
