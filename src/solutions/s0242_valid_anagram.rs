@@ -1,27 +1,24 @@
-use std::collections::{hash_map::Entry, HashMap};
+use std::collections::HashMap;
 
 pub struct Solution;
 
 impl Solution {
     pub fn is_anagram(s: String, t: String) -> bool {
-        let mut map = HashMap::with_capacity(s.len());
+        let mut counts = HashMap::with_capacity(s.len());
 
         for c in s.chars() {
-            *map.entry(c).or_insert(0) += 1u16;
+            *counts.entry(c).or_insert(0) += 1u32;
         }
 
         for c in t.chars() {
-            match map.entry(c) {
-                Entry::Vacant(_) => {
-                    return false;
-                }
-                Entry::Occupied(mut entry) => {
-                    *entry.get_mut() -= 1;
-                }
+            let entry = counts.entry(c).or_insert(0);
+            if *entry == 0 {
+                return false;
             }
+            *entry -= 1;
         }
 
-        map.values().all(|count| *count == 0)
+        counts.values().all(|count| *count == 0)
     }
 }
 
