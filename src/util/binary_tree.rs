@@ -49,9 +49,9 @@ pub fn create_tree(values: Vec<i32>) -> MaybeNode {
     Some(root)
 }
 
-pub struct DepthFirstIter(VecDeque<Node>);
+pub struct BreadthFirstIter(VecDeque<Node>);
 
-impl DepthFirstIter {
+impl BreadthFirstIter {
     pub fn new(root: &MaybeNode) -> Self {
         let mut queue = VecDeque::new();
         if let Some(node) = root {
@@ -61,7 +61,7 @@ impl DepthFirstIter {
     }
 }
 
-impl Iterator for DepthFirstIter {
+impl Iterator for BreadthFirstIter {
     type Item = Node;
 
     fn next(&mut self) -> Option<Self::Item> {
