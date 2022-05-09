@@ -50,7 +50,6 @@ mod tests {
     }
 
     #[test]
-    #[rustfmt::skip]
     fn test2() {
         //           1
         //         /  \
@@ -59,7 +58,7 @@ mod tests {
         //     3  3  N  N
         //   / \
         //  4  4
-        let root = create_tree(vec![1,2,2,3,3,-1,-1,4,4]);
+        let root = create_tree(vec![1, 2, 2, 3, 3, -1, -1, 4, 4]);
         assert!(!Solution::is_balanced(root));
     }
 
