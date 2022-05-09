@@ -49,6 +49,18 @@ pub fn create_tree(values: Vec<i32>) -> MaybeNode {
     Some(root)
 }
 
+pub fn children(node: &Node) -> Vec<Node> {
+    let mut result = Vec::new();
+    let node_ref = node.borrow();
+    if let Some(left) = &node_ref.left {
+        result.push(left.clone());
+    }
+    if let Some(right) = &node_ref.right {
+        result.push(right.clone());
+    }
+    result
+}
+
 pub struct BreadthFirstIter(VecDeque<Node>);
 
 impl BreadthFirstIter {
@@ -66,10 +78,9 @@ impl Iterator for BreadthFirstIter {
 
     fn next(&mut self) -> Option<Self::Item> {
         self.0.pop_front().map(|node| {
-            let node_ref = node.borrow();
-            [&node_ref.left, &node_ref.right].into_iter().flatten().for_each(|node| {
-                self.0.push_back(node.clone());
-            });
+            for child in children(&node) {
+                self.0.push_back(child.clone());
+            }
             node.clone()
         })
     }
@@ -81,4 +92,26 @@ pub fn print_row(row: &Vec<Node>) -> String {
         .map(|node| node.borrow().val)
         .collect::<Vec<_>>();
     format!("***** row: {:?}", values)
+}
+
+#[cfg(test)]
+mod tests {
+
+
+    mod breadth_iter_tests {
+        use super::super::*;
+
+        #[test]
+        fn test1() {
+            //           1
+            //         /  \
+            //        2    2
+            //      / \   / \
+            //     3  3  N  N
+            //   / \
+            //  4  4
+            let root = create_tree(vec![1, 2, 2, 3, 3, -1, -1, 4, 4]);
+            assert!(true);
+        }
+    }
 }
