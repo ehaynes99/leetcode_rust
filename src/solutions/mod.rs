@@ -1,4 +1,3 @@
-pub mod s0543_diameter_of_binary_tree;
 pub mod s0001_two_sum;
 pub mod s0009_palindrome_number;
 pub mod s0020_valid_parentheses;
@@ -22,5 +21,7 @@ pub mod s0278_first_bad_version;
 pub mod s0383_ransom_note;
 pub mod s0409_longest_palindrome;
 pub mod s0542_matrix;
+pub mod s0543_diameter_of_binary_tree;
 pub mod s0704_binary_search;
 pub mod s0733_flood_fill;
+pub mod s0876_middle_of_the_linked_list;
