@@ -4,6 +4,7 @@ use std::rc::Rc;
 
 type Node = Rc<RefCell<TreeNode>>;
 type MaybeNode = Option<Node>;
+pub const NULL: i32 = i32::MIN;
 
 #[derive(Debug, PartialEq, Eq)]
 pub struct TreeNode {
@@ -23,7 +24,11 @@ impl TreeNode {
     }
 }
 
-pub fn create_tree(values: Vec<i32>) -> MaybeNode {
+pub fn from_array(values: &[i32]) -> MaybeNode {
+    from_vec(values.to_vec())
+}
+
+pub fn from_vec(values: Vec<i32>) -> MaybeNode {
     if values.is_empty() {
         return None;
     }
@@ -33,7 +38,7 @@ pub fn create_tree(values: Vec<i32>) -> MaybeNode {
 
     for index in 1..values.len() {
         let value = values[index];
-        if value >= 0 {
+        if value != NULL {
             let node = Rc::new(RefCell::new(TreeNode::new(value)));
             nodes.push(node.clone());
             let parent = &nodes[(index - 1) / 2];
@@ -92,26 +97,4 @@ pub fn print_row(row: &Vec<Node>) -> String {
         .map(|node| node.borrow().val)
         .collect::<Vec<_>>();
     format!("***** row: {:?}", values)
-}
-
-#[cfg(test)]
-mod tests {
-
-
-    mod breadth_iter_tests {
-        use super::super::*;
-
-        #[test]
-        fn test1() {
-            //           1
-            //         /  \
-            //        2    2
-            //      / \   / \
-            //     3  3  N  N
-            //   / \
-            //  4  4
-            let root = create_tree(vec![1, 2, 2, 3, 3, -1, -1, 4, 4]);
-            assert!(true);
-        }
-    }
 }

@@ -34,7 +34,7 @@ impl Solution {
 
 #[cfg(test)]
 mod tests {
-    use crate::util::binary_tree::create_tree;
+    use crate::util::binary_tree::{from_array,NULL};
 
     use super::*;
 
@@ -45,7 +45,7 @@ mod tests {
         //  9    20
         //      / \
         //    15  7
-        let root = create_tree(vec![3, 9, 20, -1, -1, 15, 7]);
+        let root = from_array(&[3, 9, 20, NULL, NULL, 15, 7]);
         assert!(Solution::is_balanced(root));
     }
 
@@ -58,7 +58,7 @@ mod tests {
         //     3  3  N  N
         //   / \
         //  4  4
-        let root = create_tree(vec![1, 2, 2, 3, 3, -1, -1, 4, 4]);
+        let root = from_array(&[1, 2, 2, 3, 3, NULL, NULL, 4, 4]);
         assert!(!Solution::is_balanced(root));
     }
 
@@ -71,7 +71,7 @@ mod tests {
         //     4  5  6  null
         //   /
         //  8
-        let root = create_tree(vec![1, 2, 3, 4, 5, 6, -1, 8]);
+        let root = from_array(&[1, 2, 3, 4, 5, 6, NULL, 8]);
         assert!(Solution::is_balanced(root));
     }
 
@@ -84,7 +84,7 @@ mod tests {
         //     3   N  N  3
         //   /  \      /  \
         //  4   N     N   4
-        let root = create_tree(vec![1, 2, 2, 3, -1, -1, 3, 4, -1, -1, 4]);
+        let root = from_array(&[1, 2, 2, 3, NULL, NULL, 3, 4, NULL, NULL, 4]);
         assert!(!Solution::is_balanced(root));
     }
 }

@@ -31,7 +31,7 @@ impl Solution {
 
 #[cfg(test)]
 mod tests {
-    use crate::util::binary_tree::create_tree;
+    use crate::util::binary_tree::from_array;
 
     use super::*;
 
@@ -42,19 +42,19 @@ mod tests {
         //    2  3
         //   / \
         //  4  5
-        let root = create_tree(vec![1, 2, 3, 4, 5]);
+        let root = from_array(&[1, 2, 3, 4, 5]);
         assert_eq!(3, Solution::diameter_of_binary_tree(root));
     }
 
     #[test]
     fn test2() {
-        let root = create_tree(vec![1, 2]);
+        let root = from_array(&[1, 2]);
         assert_eq!(1, Solution::diameter_of_binary_tree(root));
     }
 
     #[test]
     fn test3() {
-        let root = create_tree(vec![
+        let root = from_array(&[
             4, 7, 3, -1, -1, 9, 3, 9, 7, 4, -1, 6, -1, 6, 6, -1, -1, 0, 6, 5, -1, 9, -1, -1, 1, 4,
             -1, -1, -1, 2,
         ]);
