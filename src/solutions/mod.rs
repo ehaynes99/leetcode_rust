@@ -6,6 +6,7 @@ pub mod s0023_merge_k_sorted_lists;
 pub mod s0053_maximum_subarray;
 pub mod s0067_add_binary;
 pub mod s0070_climbing_stairs;
+pub mod s0104_maximum_depth_of_binary_tree;
 pub mod s0110_balanced_binary_tree;
 pub mod s0121_best_time_to_buy_and_sell_stock;
 pub mod s0125_valid_palindrome;
