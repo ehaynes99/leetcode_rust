@@ -13,6 +13,7 @@ pub mod s0125_valid_palindrome;
 pub mod s0155_min_stack;
 pub mod s0169_majority_element;
 pub mod s0206_reverse_linked_list;
+pub mod s0217_contains_duplicate;
 pub mod s0225_implement_stack_using_queues;
 pub mod s0226_invert_binary_tree;
 pub mod s0232_implement_queue_using_stacks;
