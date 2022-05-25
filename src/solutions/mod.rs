@@ -14,6 +14,7 @@ pub mod s0104_maximum_depth_of_binary_tree;
 pub mod s0110_balanced_binary_tree;
 pub mod s0121_best_time_to_buy_and_sell_stock;
 pub mod s0125_valid_palindrome;
+pub mod s0150_evaluate_reverse_polish_notation;
 pub mod s0155_min_stack;
 pub mod s0169_majority_element;
 pub mod s0206_reverse_linked_list;
