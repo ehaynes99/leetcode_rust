@@ -1,6 +1,6 @@
 pub struct Solution;
 
-const OFFSET: u8 = 'a' as u8;
+const OFFSET: u8 = b'a';
 
 impl Solution {
     pub fn can_construct(ransom_note: String, magazine: String) -> bool {

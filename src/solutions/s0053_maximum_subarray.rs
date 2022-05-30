@@ -7,11 +7,10 @@ impl Solution {
         let mut max = nums[0];
         let mut curr_max = nums[0];
 
-        for i in 1..nums.len() {
-            let num = nums[i];
-            curr_max = cmp::max(num, curr_max + num);
+        nums.iter().skip(1).for_each(|num| {
+            curr_max = cmp::max(*num, curr_max + num);
             max = cmp::max(max, curr_max);
-        }
+        });
         max
     }
 }

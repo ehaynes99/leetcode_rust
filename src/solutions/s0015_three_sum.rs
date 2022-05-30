@@ -36,13 +36,13 @@ impl Solution {
         result
     }
 
-    fn max_indexes(nums: &Vec<i32>) -> HashMap<i32, usize> {
+    fn max_indexes(nums: &[i32]) -> HashMap<i32, usize> {
         let mut result = HashMap::<i32, usize>::with_capacity(nums.len());
 
-        for (i, num) in nums.iter().enumerate() {
+        nums.iter().enumerate().for_each(|(i, num)| {
             let entry = result.entry(*num).or_default();
             *entry = i;
-        }
+        });
         result
     }
 }

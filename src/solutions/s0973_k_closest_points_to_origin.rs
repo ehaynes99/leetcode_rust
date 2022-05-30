@@ -13,7 +13,7 @@ impl Solution {
         points
     }
 
-    fn distance(point: &Vec<i32>) -> f32 {
+    fn distance(point: &[i32]) -> f32 {
         let sum_of_squares = point[0].pow(2) + point[1].pow(2);
         (sum_of_squares.abs() as f32).sqrt()
     }

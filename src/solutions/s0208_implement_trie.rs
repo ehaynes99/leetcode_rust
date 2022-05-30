@@ -6,6 +6,7 @@ struct Node {
     children: HashMap<u8, Box<Node>>,
 }
 
+#[derive(Default)]
 pub struct Trie {
     root: Node,
 }
@@ -37,7 +38,7 @@ impl Trie {
         self.get_tail(&prefix).is_some()
     }
 
-    fn get_tail(&self, prefix: &String) -> Option<&Node> {
+    fn get_tail(&self, prefix: &str) -> Option<&Node> {
         let mut node = &self.root;
 
         for c in prefix.as_bytes() {

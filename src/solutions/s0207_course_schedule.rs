@@ -51,7 +51,7 @@ mod tests {
     use super::*;
 
     fn as_vecs(arr: &[[i32; 2]]) -> Vec<Vec<i32>> {
-        arr.into_iter().map(|pair| pair.to_vec()).collect()
+        arr.iter().map(|pair| pair.to_vec()).collect()
     }
 
     #[test]

@@ -5,7 +5,6 @@ pub struct MinStack {
 }
 
 impl MinStack {
-
     pub fn new() -> Self {
         Self { stack: Vec::new() }
     }

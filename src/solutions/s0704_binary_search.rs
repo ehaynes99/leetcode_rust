@@ -1,4 +1,4 @@
-use std::convert::TryFrom;
+use std::cmp::Ordering;
 
 pub struct Solution;
 
@@ -11,18 +11,22 @@ impl Solution {
             let mid = (min + max) / 2;
             let value = nums[mid];
 
-            if value == target {
-                return i32::try_from(mid).expect("Could not convert usize to i32");
-            } else if value < target {
-                min = mid + 1;
-                if min == nums.len() {
-                    break;
+            match value.cmp(&target) {
+                Ordering::Equal => {
+                    return mid as i32;
                 }
-            } else {
-                if mid == 0 {
-                    break;
+                Ordering::Less => {
+                    min = mid + 1;
+                    if min == nums.len() {
+                        break;
+                    }
                 }
-                max = mid - 1;
+                Ordering::Greater => {
+                    if mid == 0 {
+                        break;
+                    }
+                    max = mid - 1;
+                }
             }
         }
 
@@ -54,7 +58,7 @@ mod tests {
 
     #[test]
     fn test4() {
-        let nums = vec![-1,0,3,5,9,12];
+        let nums = vec![-1, 0, 3, 5, 9, 12];
         assert_eq!(-1, Solution::search(nums, 13));
     }
 }

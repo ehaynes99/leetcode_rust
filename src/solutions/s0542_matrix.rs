@@ -32,7 +32,7 @@ impl Solution {
 
         let mut cells = VecDeque::new();
 
-        for y in 0..height {
+        (0..height).for_each(|y| {
             for x in 0..width {
                 if matrix[y][x] == 0 {
                     cells.push_back((x, y));
@@ -40,7 +40,7 @@ impl Solution {
                     matrix[y][x] = i32::MAX;
                 }
             }
-        }
+        });
 
         while let Some(cell) = cells.pop_front() {
             let (x, y) = cell;

@@ -32,7 +32,7 @@ impl Solution {
         let mut intervals = intervals;
         intervals.splice(insert_index..tail_index, [new_interval]);
 
-        return intervals;
+        intervals
     }
 }
 

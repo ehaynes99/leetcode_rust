@@ -6,6 +6,7 @@ impl Solution {
     pub fn two_sum(nums: Vec<i32>, target: i32) -> Vec<i32> {
         let indexes = Self::max_indexes(&nums);
 
+        #[allow(clippy::needless_range_loop)]
         for i in 0..nums.len() - 1 {
             let value = target - nums[i];
             if let Some(max_index) = indexes.get(&value) {
@@ -17,7 +18,7 @@ impl Solution {
         panic!("Couldn't solve!")
     }
 
-    fn max_indexes(nums: &Vec<i32>) -> HashMap<i32, usize> {
+    fn max_indexes(nums: &[i32]) -> HashMap<i32, usize> {
         let mut result = HashMap::<i32, usize>::with_capacity(nums.len());
 
         for (i, num) in nums.iter().enumerate() {

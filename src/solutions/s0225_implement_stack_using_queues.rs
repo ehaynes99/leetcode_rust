@@ -1,5 +1,6 @@
 use std::collections::VecDeque;
 
+#[derive(Default)]
 pub struct MyStack {
     a: VecDeque<i32>,
     b: VecDeque<i32>,
