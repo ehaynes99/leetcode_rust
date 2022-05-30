@@ -1,3 +1,4 @@
+pub mod s0207_course_schedule;
 pub mod s0001_two_sum;
 pub mod s0003_longest_substring_without_repeating_characters;
 pub mod s0009_palindrome_number;
