@@ -1,27 +1,13 @@
 pub struct Solution;
-use std::rc::Rc;
 use std::cell::RefCell;
+use std::rc::Rc;
 
-#[derive(Debug, PartialEq, Eq)]
-pub struct TreeNode {
-  pub val: i32,
-  pub left: Option<Rc<RefCell<TreeNode>>>,
-  pub right: Option<Rc<RefCell<TreeNode>>>,
-}
+use crate::util::binary_tree::TreeNode;
 
-impl TreeNode {
-  #[inline]
-  pub fn new(val: i32) -> Self {
-    TreeNode {
-      val,
-      left: None,
-      right: None
-    }
-  }
-}
+type MaybeNode = Option<Rc<RefCell<TreeNode>>>;
 
 impl Solution {
-    pub fn invert_tree(node: Option<Rc<RefCell<TreeNode>>>) -> Option<Rc<RefCell<TreeNode>>> {
+    pub fn invert_tree(node: MaybeNode) -> Option<Rc<RefCell<TreeNode>>> {
         node.map(|rc| {
             {
                 let mut value = rc.borrow_mut();
@@ -33,5 +19,36 @@ impl Solution {
             }
             rc
         })
+    }
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+    use crate::util::binary_tree::{from_array,level_order_values};
+
+    fn solve(root: MaybeNode) -> Vec<i32> {
+        level_order_values(Solution::invert_tree(root))
+    }
+
+    #[test]
+    fn test1() {
+        let root = from_array(&[4, 2, 7, 1, 3, 6, 9]);
+        let expected = vec![4, 7, 2, 9, 6, 3, 1];
+        assert_eq!(expected, solve(root));
+    }
+
+    #[test]
+    fn test2() {
+        let root = from_array(&[2, 1, 3]);
+        let expected = vec![2, 3, 1];
+        assert_eq!(expected, solve(root));
+    }
+
+    #[test]
+    fn test3() {
+        let root = from_array(&[]);
+        let expected = Vec::<i32>::new();
+        assert_eq!(expected, solve(root));
     }
 }
