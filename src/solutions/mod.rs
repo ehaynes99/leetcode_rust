@@ -18,6 +18,7 @@ pub mod s0125_valid_palindrome;
 pub mod s0150_evaluate_reverse_polish_notation;
 pub mod s0155_min_stack;
 pub mod s0169_majority_element;
+pub mod s0200_number_of_islands;
 pub mod s0206_reverse_linked_list;
 pub mod s0207_course_schedule;
 pub mod s0208_implement_trie;
