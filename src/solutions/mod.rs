@@ -5,6 +5,7 @@ pub mod s0015_three_sum;
 pub mod s0020_valid_parentheses;
 pub mod s0021_merge_two_sorted_lists;
 pub mod s0023_merge_k_sorted_lists;
+pub mod s0033_search_in_rotated_sorted_array;
 pub mod s0053_maximum_subarray;
 pub mod s0057_insert_interval;
 pub mod s0067_add_binary;
