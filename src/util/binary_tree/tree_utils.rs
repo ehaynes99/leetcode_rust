@@ -17,7 +17,7 @@ pub fn from_vec(values: Vec<i32>) -> MaybeNode {
         return None;
     }
 
-    let root = Rc::new(RefCell::new(TreeNode::new(values[0])));
+    let root = create_node(values[0]);
     let mut nodes = vec![root.clone()];
 
     for index in 1..values.len() {
@@ -36,6 +36,14 @@ pub fn from_vec(values: Vec<i32>) -> MaybeNode {
     }
 
     Some(root)
+}
+
+pub fn set_left(node: &mut Node, value: i32) {
+    node.borrow_mut().left.replace(create_node(value));
+}
+
+pub fn set_right(node: &mut Node, value: i32) {
+    node.borrow_mut().left.replace(create_node(value));
 }
 
 pub fn children(node: &Node) -> Vec<Node> {

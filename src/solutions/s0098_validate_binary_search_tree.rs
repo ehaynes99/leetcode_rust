@@ -33,7 +33,7 @@ impl Solution {
 
 #[cfg(test)]
 mod tests {
-    use crate::util::binary_tree::{from_array, NULL};
+    use crate::util::binary_tree::{create_node, from_array, NULL, set_left};
 
     use super::*;
 
@@ -57,8 +57,10 @@ mod tests {
 
     #[test]
     fn test4() {
-        let root = from_array(&[-2147483648, -2147483648]);
-        assert!(!Solution::is_valid_bst(root));
+        // from_array helper uses i32::MIN as NULL, so need to do it manually here
+        let mut root = create_node(-2147483648);
+        set_left(&mut root, -2147483648);
+        assert!(!Solution::is_valid_bst(Some(root)));
     }
 
     #[test]
