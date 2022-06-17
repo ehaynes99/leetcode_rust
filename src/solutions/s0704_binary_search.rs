@@ -1,4 +1,4 @@
-use std::cmp::Ordering;
+use std::cmp::Ordering::*;
 
 pub struct Solution;
 
@@ -7,26 +7,13 @@ impl Solution {
         let mut min = 0;
         let mut max = nums.len();
 
-        while min <= max {
+        while min < max {
             let mid = (min + max) / 2;
-            let value = nums[mid];
 
-            match value.cmp(&target) {
-                Ordering::Equal => {
-                    return mid as i32;
-                }
-                Ordering::Less => {
-                    min = mid + 1;
-                    if min == nums.len() {
-                        break;
-                    }
-                }
-                Ordering::Greater => {
-                    if mid == 0 {
-                        break;
-                    }
-                    max = mid - 1;
-                }
+            match nums[mid].cmp(&target) {
+                Equal => return mid as i32,
+                Less => min = mid + 1,
+                Greater => max = mid,
             }
         }
 
