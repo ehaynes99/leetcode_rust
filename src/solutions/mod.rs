@@ -7,6 +7,7 @@ pub mod s0021_merge_two_sorted_lists;
 pub mod s0023_merge_k_sorted_lists;
 pub mod s0033_search_in_rotated_sorted_array;
 pub mod s0039_combination_sum;
+pub mod s0046_permutations;
 pub mod s0053_maximum_subarray;
 pub mod s0057_insert_interval;
 pub mod s0067_add_binary;
