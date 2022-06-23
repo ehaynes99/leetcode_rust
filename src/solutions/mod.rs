@@ -9,6 +9,7 @@ pub mod s0033_search_in_rotated_sorted_array;
 pub mod s0039_combination_sum;
 pub mod s0046_permutations;
 pub mod s0053_maximum_subarray;
+pub mod s0056_merge_intervals;
 pub mod s0057_insert_interval;
 pub mod s0067_add_binary;
 pub mod s0070_climbing_stairs;
