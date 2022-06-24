@@ -31,6 +31,7 @@ pub mod s0225_implement_stack_using_queues;
 pub mod s0226_invert_binary_tree;
 pub mod s0232_implement_queue_using_stacks;
 pub mod s0235_lowest_common_ancestor_of_a_binary_search_tree;
+pub mod s0236_lowest_common_ancestor_of_a_binary_tree;
 pub mod s0238_product_of_array_except_self;
 pub mod s0242_valid_anagram;
 pub mod s0278_first_bad_version;
