@@ -13,6 +13,7 @@ pub mod s0056_merge_intervals;
 pub mod s0057_insert_interval;
 pub mod s0067_add_binary;
 pub mod s0070_climbing_stairs;
+pub mod s0075_sort_colors;
 pub mod s0098_validate_binary_search_tree;
 pub mod s0102_binary_tree_level_order_traversal;
 pub mod s0104_maximum_depth_of_binary_tree;
